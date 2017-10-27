@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+   <table>
+       <tr>
+          <th>database1</th>
+          <th>database2</th>
+
+       </tr>
+       <tr>
+       {% for i in 0..5 %}
+          {% if conf.database1[i] == null %}
+           <td>null</td>
+           <td>null</td>
+          {% else %}
+           <td>{{ conf.database1[i] }}</td>
+           <td>{{ conf.database2[i] }}</td>
+           {% endif %}
+       </tr>
+       {% endfor %}
+
+   </table>
+{% endblock %}
